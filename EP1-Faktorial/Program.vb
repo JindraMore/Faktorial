@@ -11,15 +11,20 @@ Module Program
 
             If Integer.TryParse(vstup, cislo) Then
                 If cislo < 10 Then
-                    For i = 1 To cislo
-                        soucet = soucet + i
-                    Next
+                    If cislo > 0 Then
+                        For i = 1 To cislo
+                            soucet = soucet + i
+                        Next
+                        Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+                    Else
+                        Console.WriteLine("Èislo nesmí být záporné!")
+                    End If
                 Else
-                    Console.WriteLine("Zadej èíslo menší než 10!")
+                        Console.WriteLine("Zadej èíslo menší než 10!")
                 End If
-                Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
-                Else
-                    Console.WriteLine("Napiš jen celé èíslo!")
+
+            Else
+                Console.WriteLine("Napiš jen celé èíslo!")
                 End If
 
 
