@@ -1,18 +1,27 @@
 Imports System
 
 Module Program
-  Sub Main(args As String())
+    Sub Main(args As String())
+        Dim vstup As String
         Dim cislo As Integer
         Dim soucet As Integer = 0
+        Do
+            Console.Write("Zadej èíslo: ")
+            vstup = Console.ReadLine
 
-        Console.Write("Zadej èíslo: ")
-        cislo = Console.ReadLine
-
-        For i = 1 To cislo
-            soucet = soucet + i
-        Next
+            If Integer.TryParse(vstup, cislo) Then
+                For i = 1 To cislo
+                    soucet = soucet + i
+                Next
 
 
-        Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+                Console.WriteLine($"Souèet od 1 do {cislo} je {soucet}")
+            Else
+                Console.WriteLine("Napiš jen celé èíslo!")
+            End If
+        Loop
+
+
+
     End Sub
 End Module
